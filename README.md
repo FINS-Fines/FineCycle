@@ -45,7 +45,7 @@ FINECYCLE supports a bidirectional image relocation loop, ensuring environmental
 ### 2.1 Forward Deployment (Server → Host)
 Deploying a functional robotic image from the central server to the target host:
 * **For Virtualized Hosts:**
-  * **Cluster Live Migration (CLM):** Transfers only the volatile VM state for sub-second relocation (requires cluster shared storage). Ideal for non-real-time tasks.
+  * **Cluster Live Migration (CLM):** Transfers only the volatile VM state for sub-second relocation (requires cluster shared storage).
     ![](figures/migration.png)
     * 💡 You can also utilize `scripts/CLM/deploy_clm.py` for automated CLM deployment. Please refer to `scripts/CLM/readme.md` for implementation details.
   * **Cluster Disk Cloning (CDC):**
@@ -84,15 +84,16 @@ For standard debugging and algorithmic refinement:
 For resource-intensive tasks (e.g., compiling large ROS 2 workspaces, training neural networks) that exceed the onboard computer's capabilities, FINECYCLE leverages **Mobile Disk Media** (e.g., Portable NVMe SSDs) to bridge the server and the host:
 1. **DDC to Media:** follow the [Clonezilla Tutorial](https://clonezilla.org/fine-print-live-doc.php?path=./clonezilla-live/doc/01_Save_disk_image/00-boot-clonezilla-live-cd.doc#00-boot-clonezilla-live-cd.doc) (typically utilizing the disk-to-disk feature) to clone the robotic image onto the mobile disk media.
 2. **Server-Side Computation:** Plug the media into the Central Server. Mount the disk into a VM via hardware pass-through and boot VM in the disk. The steps are as follows.
-   1. Identify Disk ID and map Disk to VM(PVE Host Shell):
    ```bash
+   ##Identify Disk ID and map Disk to VM(PVE Host Shell):
    ls -l /dev/disk/by-id/ | grep "usb"
    # Copy the complete ID (e.g., usb-Samsung_SSD_...) without "-part1"
    qm set <VM_ID> -scsi1 /dev/disk/by-id/<disk_ID>
+   
+   ##Configure VM (PVE Web UI):
+   ##    Hardware: Select the original virtual disk and click Detach (Mandatory to avoid UUID conflicts).
+   ##    Options: Set `scsi1` as the 1st priority in Boot Order.
    ```
-   2. Configure VM (PVE Web UI):
-      * Hardware: Select the original virtual disk and click Detach (Mandatory to avoid UUID conflicts).
-      * Options: Set `scsi1` as the 1st priority in Boot Order.
 3. **Host-Side Testing:** Unplug the media and connect it to the physical Robotic Host. Boot the robot directly from the mobile disk to immediately test the newly compiled algorithms.
 
 *Note: This approach streamlines the develop-and-test iteration loop by eliminating the wait times associated with transferring massive disk images over the network.*
