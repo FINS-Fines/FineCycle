@@ -1,14 +1,7 @@
 #!/usr/bin/env python3
-"""
-ICRA V1.0 脚本：deploy_cdc.py
-
-功能对应论文 CDC（Cluster Disk Cloning）：
-前提：VM 已通过 CLM 到达目标节点并运行。
-动作：在目标节点将磁盘从共享存储（默认 VMs）移动到本地存储（默认 local-lvm）。
-结果：VM 在目标主机获得本地盘高 I/O 能力。
-
-依赖：pip install paramiko
-"""
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 from __future__ import annotations
 

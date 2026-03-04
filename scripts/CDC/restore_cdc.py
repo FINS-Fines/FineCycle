@@ -1,14 +1,7 @@
 #!/usr/bin/env python3
-"""
-ICRA V1.0 脚本：restore_cdc.py
-
-功能对应论文 CDC（Cluster Disk Cloning）反向迁移：
-前提：VM 已通过 CLM 到达目标节点并运行。
-动作：在目标节点将磁盘从本地存储（默认 local-lvm）迁回共享存储（默认 VMs）。
-结果：VM 恢复为共享存储形态，便于后续在集群内迁移或统一管理。
-
-依赖：pip install paramiko
-"""
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 from __future__ import annotations
 

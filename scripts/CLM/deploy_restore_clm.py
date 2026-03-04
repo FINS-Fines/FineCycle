@@ -1,14 +1,7 @@
 #!/usr/bin/env python3
-"""
-ICRA V1.0 脚本：deploy_restore_clm.py
-
-功能对应论文 CLM（Cluster Live Migration）：
-1) 迁移前 USB 归一（清理 usbX 并设置 usb0: spice）
-2) 确保磁盘在共享存储（默认 VMs）
-3) 执行纯状态热迁移：qm migrate <vmid> <target_node> --online 1
-
-依赖：pip install paramiko
-"""
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 from __future__ import annotations
 

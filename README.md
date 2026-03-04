@@ -1,6 +1,6 @@
 # FINECYCLE: A Full-Cycle Management Paradigm for Robotic Applications
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![ROS 2](https://img.shields.io/badge/ROS_2-Humble-blue.svg)](https://docs.ros.org/en/humble/)
 [![Paper](https://img.shields.io/badge/Paper-ICRA_2026-green.svg)](#)
 
@@ -92,7 +92,7 @@ For resource-intensive tasks (e.g., compiling large ROS 2 workspaces, training n
    ```
    2. Configure VM (PVE Web UI):
       * Hardware: Select the original virtual disk and click Detach (Mandatory to avoid UUID conflicts).
-      * Options: Set scsi1 as the 1st priority in Boot Order.
+      * Options: Set `scsi1` as the 1st priority in Boot Order.
 3. **Host-Side Testing:** Unplug the media and connect it to the physical Robotic Host. Boot the robot directly from the mobile disk to immediately test the newly compiled algorithms.
 
 *Note: This approach streamlines the develop-and-test iteration loop by eliminating the wait times associated with transferring massive disk images over the network.*
@@ -140,4 +140,4 @@ Benchmarking and performance evaluation
 
 📜 License
 
-This project is released under the MIT License
+This project is licensed under the [Mozilla Public License 2.0](LICENSE).
