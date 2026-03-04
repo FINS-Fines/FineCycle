@@ -1,0 +1,13 @@
+auto lo
+iface lo inet loopback
+
+auto <interface_name>
+iface <interface_name> inet manual
+
+auto vmbr0
+iface vmbr0 inet static
+    address <static_IP>/<prefix_length>  # e.g., 192.168.8.200/21 (Same as wireless)
+    gateway <gateway_IP>      # e.g., 192.168.8.1
+    bridge-ports <interface_name>
+    bridge-stp off
+    bridge-fd 0

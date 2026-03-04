@@ -1,0 +1,17 @@
+auto lo
+iface lo inet loopback
+
+auto <interface_name>
+iface <interface_name> inet static
+    address <static_IP>/<prefix_length  # e.g., 192.168.8.100/21
+    gateway <gateway_IP>      # e.g., 192.168.8.1
+    wpa-ssid <WiFi_SSID>          # Your Wi-Fi SSID
+    wpa-psk <WiFi-PSK>            # Your Wi-Fi Password/PSK
+
+# Keep an empty vmbr0 to prevent PVE boot errors,
+# though it may not bridge external traffic in wireless mode.
+auto vmbr0
+iface vmbr0 inet manual
+    bridge-ports none
+    bridge-stp off
+    bridge-fd 0
