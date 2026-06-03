@@ -4,6 +4,8 @@
 [![ROS 2](https://img.shields.io/badge/ROS_2-Humble-blue.svg)](https://docs.ros.org/en/humble/)
 [![Paper](https://img.shields.io/badge/Paper-ICRA_2026-green.svg)](#)
 
+> **Version Notice**: The current release is **v0.0 preview version** with partial fundamental modules available. The fully-featured **v1.0 official release** will be open-sourced soon. Version 1.0 delivers a complete robotic application management framework, enabling developers to distribute pre-built robotic images to all robots within smart factory scenarios with one-click operation. Please ⭐Star this repo to track our upcoming updates.
+
 **FINECYCLE** is a hardware-virtualization-based management paradigm designed to streamline the deployment and development of robotic applications. By encapsulating the operating system, development environments, dependencies, and applications into unified **Robotic Images**, FINECYCLE achieves a zero-configuration, closed-loop workflow: *Deploy → Develop → Restore → Redeploy*.
 
 This repository provides the guidelines and tools to build the FINECYCLE infrastructure, facilitating both local and high-performance collaborative development across heterogeneous robotic hosts.
