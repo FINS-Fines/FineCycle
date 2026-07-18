@@ -1,0 +1,41 @@
+system:
+  # 演示模式：True 时将跳过磁盘搬运（local-lvm <-> VMs），大幅缩短迁移时间
+  demo_mode: true
+  # 日志级别
+  log_level: "INFO"
+  # 是否需要物理插拔网线确认（False 适合无人值守）
+  require_cable_confirmation: false
+
+timeouts:
+  # Pipeline (pipeline.py)
+  ssh_reboot: 600.0
+  ssh_reconnect: 300.0
+  migration: 1800.0
+  pve_node_ready: 180.0
+  # Baremetal (baremetal_pipeline.py)
+  baremetal_migration: 5400.0
+  baremetal_initial_delay: 60.0
+  baremetal_check_interval: 30.0
+
+migration:
+  # Offline migration avoids Proxmox live-migration limits such as clipboard: vnc.
+  mode: "offline"
+  offline_shutdown_timeout: 120.0
+  offline_force_stop: false
+  restart_after_offline_migration: true
+
+network_defaults:
+  # 自动探测失败时的兜底配置 (interactive_runner.py)
+  gateway: "192.168.8.1"
+  prefixlen: 21
+  wired_interface: "enp86s0"
+  wifi_interface: "wlo1"
+
+usb_whitelist:
+  # 默认允许直通的 USB 设备 ID (pipeline.py)
+  # - "0403:6001"
+  # - "10c4:ea60"
+  # - "1a86:7523"
+  # - "0bda:8153"
+  # - "0bda:8156"
+  # - "0b95:1790"

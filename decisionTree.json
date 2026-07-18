@@ -1,0 +1,88 @@
+{
+  "id": "1",
+  "name": "决策流程",
+  "description": "开发任务A，待开发任务B",
+  "children": [
+    {
+      "id": "6",
+      "name": "有空闲",
+      "description": "有空闲合适主机",
+      "children": [
+        {
+          "id": "8",
+          "name": "迁移开发",
+          "description": "有空闲且合适的主机，直接迁移镜像并开始任务开发"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "无空闲",
+      "description": "无空闲合适主机",
+      "children": [
+        {
+          "id": "9",
+          "name": "比较",
+          "description": "新任务和正在开发任务进行等级比较",
+          "children": [
+            {
+              "id": "10",
+              "name": "不能打断",
+              "description": "正在开发的任务不能打断",
+              "children": [
+                {
+                  "id": "12",
+                  "name": "等待",
+                  "description": "新任务等待合适主机开发完成"
+                }
+              ]
+            },
+            {
+              "id": "11",
+              "name": "能打断",
+              "description": "正在开发任务能打断",
+              "children": [
+                {
+                  "id": "13",
+                  "name": "搜索",
+                  "description": "预计被打断任务是否有空闲合适主机进行迁移",
+                  "children": [
+                    {
+                      "id": "14",
+                      "name": "无法迁移",
+                      "description": "被打断任务没有合适主机迁移"
+                    },
+                    {
+                      "id": "15",
+                      "name": "可以迁移",
+                      "description": "被打断任务可以被成功迁移",
+                      "children": [
+                        {
+                          "id": "16",
+                          "name": "计算时间",
+                          "description": "计算迁移时间和新任务开发时间和被打断任务重新开发时间是否超过阈值或者等待时间＋新任务开发时间",
+                          "children": [
+                            {
+                              "id": "17",
+                              "name": "效率提高",
+                              "description": "打断，并进行两个任务的迁移"
+                            },
+                            {
+                              "id": "18",
+                              "name": "无提升",
+                              "description": "不迁移，新任务等待合适主机开发完成"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

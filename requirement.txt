@@ -1,0 +1,12 @@
+# Core runtime dependencies
+paramiko>=2.7
+proxmoxer>=2.0
+PyYAML>=6.0
+requests>=2.28
+
+# Interactive CLI enhancements
+rich>=13.0
+prompt-toolkit>=3.0
+
+# DDC automation script dependency
+PyAutoGUI>=0.9.54
