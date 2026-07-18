@@ -80,3 +80,15 @@ A standardized robotic platform that encapsulates the operating system, developm
 ## License
 
 This project is released under the MIT License.
+
+## Citation
+
+If you find this work helpful in your research, please cite our paper:
+
+```bibtex
+@inproceedings{wang2026finecycle,
+  title={FINECYCLE: Towards a Full-Cycle Management Paradigm for Robotic Deployment and Development},
+  author={Wang, Haolin and Xi, Wang and Zhu, Zhiyuan and Fang, Chongrong and He, Jianping},
+  booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
+  year={2026}
+}
