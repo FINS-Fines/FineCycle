@@ -1,2 +1,7 @@
-CLAUDE.md
+*.pyc
+logs/
+.codex
+__pycache__/
 .idea/
+.vscode/
+CLAUDE.md
