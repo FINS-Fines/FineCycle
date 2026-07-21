@@ -1,6 +1,6 @@
 # FINECYCLE: A Full-Cycle Management Paradigm for Robotic Applications
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![ROS 2](https://img.shields.io/badge/ROS_2-Humble-blue.svg)](https://docs.ros.org/en/humble/)
 [![Paper](https://img.shields.io/badge/Paper-ICRA_2026-green.svg)](#)
 
@@ -79,7 +79,7 @@ A standardized robotic platform that encapsulates the operating system, developm
 
 ## License
 
-This project is released under the MIT License.
+This project is licensed under the [Mozilla Public License 2.0](LICENSE).
 
 ## Citation
 
